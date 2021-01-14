@@ -81,7 +81,7 @@ function renderCities() {
       cityTitle = $("<h3>").text(response.name + " "+ FormatDay());
       $("#today-weather").append(cityTitle);
       var TemperatureToNum = parseInt((response.main.temp)* 9/5 - 459);
-      var cityTemperature = $("<p>").text("Tempeture: "+ TemperatureToNum + " °C");
+      var cityTemperature = $("<p>").text("Temperature: "+ TemperatureToNum + " °C");
       $("#today-weather").append(cityTemperature);
       var cityHumidity = $("<p>").text("Humidity: "+ response.main.humidity + " %");
       $("#today-weather").append(cityHumidity);
@@ -126,7 +126,7 @@ function renderCities() {
         }).then(function(response5day) { 
             $("#boxes").empty();
             console.log(response5day);
-            for(var i=0, j=0; j<=5; i=i+6){
+            for(var i=0, j=0; j<=4; i=i+5){
                 var read_date = response5day.list[i].dt;
                 if(response5day.list[i].dt != response5day.list[i+1].dt){
                     var FivedayDiv = $("<div>");
